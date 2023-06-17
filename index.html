@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Никита Ходов</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .main-container {
+            display: flex;
+            text-align: left;
+            font-size: 16px;
+            padding: 100px;
+            padding: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .buttons {
+            text-align: center;
+            padding: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+
+        button {
+            background: none;
+            border: none;
+            color: #05386B;
+            font-size: 17px;
+            margin: 7px;
+            padding: 0;
+            cursor: pointer;
+        }
+
+
+        button:hover {
+
+            transform: scale(1.05);
+        }
+
+
+        button.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+
+        .container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #content {
+            flex: 4;
+            padding: 27px;
+
+        }
+
+        #default-content {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+
+        .marquee-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #05386B;
+            color: #EDF5E1;
+            padding: 10px 0;
+            font-size: 16px;
+            text-align: center;
+            overflow: hidden;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee linear infinite;
+            padding-left: 100%;
+        }
+
+        .fa-telegram,
+        .fa-vk,
+        .fa-github {
+            font-size: 24px;
+
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        body {
+            font-family: 'Sora', sans-serif;
+            color: #EDF5E1;
+            background-color: #5CDB95;
+        }
+
+        .profile-img {
+            width: 350px;
+            height: auto;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.04);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="buttons">
+        <button id="contactInformation-btn">Контактные данные</button>
+        <button id="education-btn">Образование</button>
+        <button id="skills-btn">Hard Skills</button>
+        <button id="experience-btn">Опыт работы</button>
+        <button id="awards-btn">Награды и достижения</button>
+        <button id="conferenceCompetitions-btn">Конкурсы и конференции</button>
+        <button id="personalQualities-btn">Soft Skills</button>
+        <button id="additionalInformationHobbies-btn">Дополнительная информация</button>
+    </div>
+    <div class="main-container">
+        <div class="container">
+            <h1>Ходов Никита Викторович</h1>
+            <img class="profile-img" src="IMG_3863.jpg" alt="Моя фотография">
+            <h3>Данный сайт является моим интерактивным резюме</h3>
+        </div>
+
+        <div id="content">
+            <div id="default-content">
+                <h2>Контактные данные</h2>
+                <p>Дата рождения: 01.03.2001</p>
+                <p>e-mail: khodovn@mail.ru</p>
+                <p>Номер телефона: +7(980)-355-46-96</p>
+                <p>Адрес проживания: г. Липецк</p>
+                <a href="https://t.me/Nverchik" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="https://vk.com/khodovn" target="_blank"> <i class="fab fa-vk"></i></a>
+                <a href="https://github.com/khitao" target="_blank"><i class="fab fa-github"></i> </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="marquee-container">
+        <span class="marquee">Здесь могла быть ваша реклама &nbsp;&nbsp; Здесь могла быть ваша реклама &nbsp;&nbsp;
+            Здесь могла быть ваша реклама &nbsp;&nbsp; Здесь могла быть ваша реклама &nbsp;&nbsp;
+            Здесь могла быть ваша реклама &nbsp;&nbsp; Здесь могла быть ваша реклама &nbsp;&nbsp;
+            Здесь могла быть ваша реклама &nbsp;&nbsp; Здесь могла быть ваша реклама &nbsp;&nbsp;
+            Здесь могла быть ваша реклама &nbsp;&nbsp; Здесь могла быть ваша реклама &nbsp;&nbsp;
+            Здесь могла быть ваша реклама &nbsp;&nbsp; Здесь могла быть ваша реклама </span>
+    </div>
+
+
+
+    <script>
+
+
+
+        var contactInformationBtn = document.getElementById("contactInformation-btn");
+        var educationBtn = document.getElementById("education-btn");
+        var skillsBtn = document.getElementById("skills-btn");
+        var experienceBtn = document.getElementById("experience-btn");
+        var awardsBtn = document.getElementById("awards-btn");
+        var conferenceCompetitionsBtn = document.getElementById("conferenceCompetitions-btn");
+        var personalQualitiesBtn = document.getElementById("personalQualities-btn");
+        var additionalInformationHobbiesBtn = document.getElementById("additionalInformationHobbies-btn");
+
+
+
+        var content = document.getElementById("content");
+
+
+        function changeContent(newContent) {
+            content.innerHTML = newContent;
+        }
+
+
+        var defaultContent = document.getElementById("default-content").innerHTML;
+
+        contactInformationBtn.addEventListener("click", function () {
+            content.innerHTML = defaultContent;
+            setActiveButton(contactInformationBtn);
+        });
+
+
+        educationBtn.addEventListener("click", function () {
+            changeContent("<h2>Образование</h2>" +
+                "<ul>" +
+                "<li><p>МАОУ \"Лицей 44\", физико-математический профиль, г. Липецк, 2008-2016 гг.</p></li>" +
+                "<li><p>МБОУ СШ №61, физико-математический профиль, г. Липецк, 2016-2019 гг.</p></li>" +
+                "<li><p>Воронежский государственный университет, Математический факультет, Фундаментальные математика и механика, Кафедра теории функций и геометрии, специалитет, 2020-2025 гг.</p></li>" +
+                "</ul>");
+
+            setActiveButton(educationBtn);
+        });
+
+
+        skillsBtn.addEventListener("click", function () {
+            changeContent("<h2>Hard Skills</h2>" +
+                "<ul>" +
+                "<li><p>Знание Java Core</p></li>" +
+                "<li><p>Базовые знания синтаксиса языков Swift и С++</p></li>" +
+                "<li><p>Базовые знания языка SQL и теории реляционных БД</p></li>" +
+                "<li><p>Есть понимание, как работать с Git системой</p></li>" +
+                "<li><p>Английский язык (уровень B2)</p></li>" +
+                "</ul>");
+
+            setActiveButton(skillsBtn);
+        });
+
+        experienceBtn.addEventListener("click", function () {
+
+            changeContent("<h2>Опыт работы</h2>" +
+                "<ul>" +
+                "<li><p>Спортсмен-инструктор по стендовой стрельбе, 2017-2022 гг.</p></li>" +
+                "</ul>");
+
+            setActiveButton(experienceBtn);
+
+        });
+        awardsBtn.addEventListener("click", function () {
+
+            changeContent("<h2>Награды и достижения</h2>" +
+                "<ul>" +
+                "<li><p>Член юниорской сборной команды России по стендовой стрельбе, 2018-2020 г.</p></li>" +
+                "<li><p>Выполнение норматива Мастера спорта России на Гран-при Австрии, 2019 г.</p></li>" +
+                "<li><p>Участник Первенства Европы по стендовой стрельбе, Италия 2019 г.</p></li>" +
+                "<li><p>Участник юниорского Кубка Мира по стендовой стрельбе, Германия 2019 г.</p></li>" +
+                "</ul>");
+            setActiveButton(awardsBtn);
+
+        });
+        conferenceCompetitionsBtn.addEventListener("click", function () {
+
+            changeContent("<h2>Конкурсы и конференции</h2>" +
+                "<ul>" +
+                "<li><p>Участник тренинга «Практические навыки предпринимательской деятельности» от экспертов МФТИ, г.Воронеж 2022 г.</p></li>" +
+                "<li><p>Студент Банковской школы Сбера, г.Воронеж 2023 г.</p></li>" +
+                "<li><p>Участник тренинга «Путь джуна» от Тинькофф, г.Воронеж 2023 г.</p></li>" +
+                "<li><p>Участник кейс-чемпионата «Разреши» НЛМК, бизнес-кейс, роль в команде: аналитик рынка, 2023 г.</p></li>" +
+                "</ul>");
+            setActiveButton(conferenceCompetitionsBtn);
+
+        });
+        personalQualitiesBtn.addEventListener("click", function () {
+
+            changeContent("<h2>Soft Skills</h2>" +
+                "<ul>" +
+                "<li><p>Внимательность</p></li>" +
+                "<li><p>Стрессоустойчивость</p></li>" +
+                "<li><p>Обучаемость</p></li>" +
+                "<li><p>Умение работать в команде</p></li>" +
+                "</ul>");
+
+            setActiveButton(personalQualitiesBtn);
+
+        });
+        additionalInformationHobbiesBtn.addEventListener("click", function () {
+
+            changeContent("<h2>Дополнительная информация</h2>" +
+                "<ul>" +
+                "<li><p>Служба в армии: ЦСКА, г.Москва, 2019-2020 гг.</p></li>" +
+                "<li><p>Чтение литературы по программированию и научно-популярной литературы</p></li>" +
+                "<li><p>Просмотр видео на темы, связанные с разработкой</p></li>" +
+                "<li><p>Бег, йога, прогулки на природе</p></li>" +
+                "</ul>");
+            setActiveButton(additionalInformationHobbiesBtn);
+
+        });
+
+        window.addEventListener('DOMContentLoaded', function () {
+
+            var defaultActiveButton = document.getElementById("contactInformation-btn");
+
+
+            defaultActiveButton.classList.add("active");
+        });
+
+
+        window.addEventListener('DOMContentLoaded', function () {
+            var marqueeText = document.querySelector('.marquee');
+            var marqueeContainerWidth = document.querySelector('.marquee-container').offsetWidth;
+            var marqueeTextWidth = marqueeText.offsetWidth;
+
+            var animationDuration = (marqueeTextWidth / marqueeContainerWidth) * 20;
+            var animationDelay = 0.001;
+
+            marqueeText.style.animationDuration = animationDuration + 's';
+            marqueeText.style.animationDelay = animationDelay + 's';
+
+            var animationEndEvent = 'animationiteration' || 'webkitAnimationIteration';
+
+            marqueeText.addEventListener(animationEndEvent, function () {
+                marqueeText.style.transform = 'translateX(' + marqueeContainerWidth + 'px)';
+            });
+        });
+
+
+
+
+        function setActiveButton(button) {
+
+            var buttons = document.getElementsByClassName("active");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            button.classList.add("active");
+        }
+
+
+
+    </script>
+</body>
+
+</html>
